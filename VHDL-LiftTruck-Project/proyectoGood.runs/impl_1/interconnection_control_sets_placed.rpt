@@ -1,0 +1,79 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4.1 (win64) Build 2117270 Tue Jan 30 15:32:00 MST 2018
+| Date         : Thu Jun 13 14:24:18 2019
+| Host         : funda4 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file interconnection_control_sets_placed.rpt
+| Design       : interconnection
+| Device       : xc7a35ti
+--------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    13 |
+| Unused register locations in slices containing registers |    48 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              28 |           12 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             107 |           29 |
+| Yes          | No                    | No                     |               1 |            1 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++----------------------------------------+----------------------+----------------------------------------------------------------+------------------+----------------+
+|              Clock Signal              |     Enable Signal    |                        Set/Reset Signal                        | Slice Load Count | Bel Load Count |
++----------------------------------------+----------------------+----------------------------------------------------------------+------------------+----------------+
+|  controladorDatos/cambiomodo           |                      |                                                                |                1 |              1 |
+|  clk_IBUF_BUFG                         |                      |                                                                |                1 |              1 |
+|  count_os_reg[3]_i_3_n_0               | datosUart/rx_buffer0 |                                                                |                1 |              1 |
+|  controladorDatos/inShov0__0           |                      |                                                                |                1 |              2 |
+|  controladorDatos/inVel0__0            |                      |                                                                |                1 |              3 |
+|  controladorDatos/inDir_reg[2]_i_1_n_0 |                      |                                                                |                1 |              3 |
+| ~datosUart/rx_busy                     |                      |                                                                |                1 |              3 |
+|  count_os_reg[3]_i_3_n_0               |                      | datosUart/count_os[3]_i_1_n_0                                  |                1 |              4 |
+|  count_os_reg[3]_i_3_n_0               |                      | datosUart/count_baud[6]_i_1_n_0                                |                2 |              7 |
+|  count_os_reg[3]_i_3_n_0               |                      |                                                                |                6 |             15 |
+|  clk_IBUF_BUFG                         |                      | div_1Mhz/cont1_carry__1_n_1                                    |                9 |             32 |
+|  count_os_reg[3]_i_3_n_0               |                      | controladorDatos/pala/frecuency_divider/cont_reg0_carry__1_n_1 |                8 |             32 |
+|  shovClk_BUFG                          |                      | controladorDatos/pala/pulse/count[31]_i_1_n_0                  |                9 |             32 |
++----------------------------------------+----------------------+----------------------------------------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                     3 |
+| 2      |                     1 |
+| 3      |                     3 |
+| 4      |                     1 |
+| 7      |                     1 |
+| 15     |                     1 |
+| 16+    |                     3 |
++--------+-----------------------+
+
+
